@@ -24,10 +24,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40.1vw;
+    width: 40vw;
     height: 10vh;
     background-image: linear-gradient(rgb(53, 120, 255) 40%, rgb(0, 38, 114));
     border: silver 5px double;
+    border-width: thick;
     padding: .8em;
     overflow: hidden;
     cursor: default;
@@ -47,15 +48,28 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     border: double goldenrod 4px;
+    border-width: thick;
 }
 
 .answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: silver 3px double;
     cursor: pointer;
     overflow: hidden;
     background-image: linear-gradient(rgb(53, 120, 255) 40%, rgb(0, 38, 114));
-    width: 20.4vw;
+    min-width: 20.4vw;
     height: 9vh;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
 }
 
 #answer-input {
@@ -77,8 +91,30 @@ body {
     opacity: .4;
 }
 
-.correct {
+#submit-button {
+    font-size: 150%;
+    border-radius: 12px;
+    min-width: 28%;
+    cursor: pointer;
+    border:rgb(41, 108, 242) solid 3px;
+    background-color: rgb(29, 75, 166);
+    padding: .3em .6em;
+    font-weight: bold;
+    text-shadow: black 2px 2px 0;
+    box-shadow: rgb(49, 112, 236) 0 2px 0, rgba(0, 0, 0, 0.782) inset 0 -3px 0;
+    color: white;
+    transition: .15s;
+}
 
+#submit-button:active {
+    box-shadow: rgb(49, 112, 236) 0 4px 0, rgba(0, 0, 0, 0.782) inset 0 2px 0;
+}
+
+.answer p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 2.3em;
 }
 
 video {
@@ -92,6 +128,6 @@ video {
 }
 
 @media(max-width:600px) {
-    .question {font-size: 1.2em;}
-    .answer-input {font-size: 1em; width: 40vw;}
+    .question, .answer p {font-size: 1.1em;}
+    #answer-input {font-size: 1em; width: 40vw;}
 }
