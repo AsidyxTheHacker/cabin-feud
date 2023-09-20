@@ -59,13 +59,14 @@ body {
     overflow: hidden;
     background-image: linear-gradient(rgb(53, 120, 255) 40%, rgb(0, 38, 114));
     min-width: 20.4vw;
+    max-width: 30vw;
     height: 9vh;
     text-align: center;
     transition: .15s;
     padding-left: 1em;
 }
 
-form {
+.input-container {
     display: flex;
     align-items: center;
     gap: 2em;
@@ -78,6 +79,7 @@ form {
     padding: .2em .5em;
     font-weight: bold;
     width: 20vw;
+    height: 3vh;
     border: rgb(41, 108, 242) solid 3px;
     box-shadow: rgb(34, 92, 208) 0 4px 0;
     background-color: rgb(161, 184, 229);
@@ -90,9 +92,10 @@ form {
 }
 
 #submit-button {
-    font-size: 150%;
+    font-size: 1vw;
     border-radius: 12px;
     min-width: 28%;
+    min-height: 4vh;
     cursor: pointer;
     border:rgb(41, 108, 242) solid 3px;
     background-color: rgb(29, 75, 166);
@@ -128,12 +131,13 @@ form {
 
 .points {
     font-size: 3em;
-    padding: .5em;
+    padding: 2.5vh 1.8vw;
     color: white;
     font-weight: bold;
     border-left: white solid 5px;
     height: 4vh;
     text-shadow: black 2px 2px 0;
+    background-image: linear-gradient(rgba(88, 143, 251, 0.819), rgba(57, 92, 162, 0.819));
 }
 
 video {
@@ -144,6 +148,67 @@ video {
     position: fixed;
     bottom: 0;
     z-index: -2;
+}
+
+.panel-num {
+    color: white;
+    margin-left: 10vw;
+    font-weight: bold;
+    background-color: rgb(0, 38, 114);
+    font-size: 2.5vw;
+    border-radius: 50%;
+    padding: .8vh 1.35vw;
+    border-bottom: white solid 3px;
+    box-shadow: rgba(0, 0, 0, 0.745) 0 0 8px;
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.786);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(rgb(53, 120, 255), rgb(0, 38, 114) 80%);
+    height: 60%;
+    border-radius: 50%;
+    width: 30%;
+    border: double gold 6px;
+    padding: 1em;
+    animation: grow 2s;
+}
+
+.start-button {
+    color: white;
+    font-size: 2.8vw;
+    border-radius: 20px;
+    padding: 0;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: .2s;
+}
+
+.start-button:hover {
+    color: rgb(53, 202, 45);
+    letter-spacing: .1vw;
+    text-shadow: rgba(0, 0, 0, 0.809) .2vw .3vh 0;
+}
+
+.modal img {
+    width: 20vw;
+    transform: translateY(-12vh);
 }
 
 .flip {
@@ -157,10 +222,20 @@ video {
 @keyframes flip {
     100%{transform: rotateX(360deg);}
 }
+@keyframes grow {
+    0%{transform: scale(0); opacity: 0;}
+    100%{transform: scale(1); opacity: 1;}
+}
 
 @media(max-width:600px) {
-    .question, .answer{font-size: 1em;}
-    .points{font-size: 1.1em; border-left: none}
+    .question{font-size: .9em;}
+    .answer{padding-right: 4vw; font-size: .8em;}
+    .question-container{min-width: 68vw;}
+    .points{font-size: .9em; border-left: solid white 2px}
     #answer-input {font-size: 1em; width: 40vw;}
+    #submit-button {font-size: 1em;}
     .main-logo {width: 10em;}
+    .modal {height: 15em; width: 15em;}
+    .modal img {width: 10em; transform: translateY(-5vh);}
+    .start-button {font-size: 2em;}
 }
