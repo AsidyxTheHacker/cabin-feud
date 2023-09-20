@@ -185,6 +185,7 @@ video {
     border: double gold 6px;
     padding: 1em;
     animation: grow 2s;
+    box-shadow: rgba(0, 0, 0, 0.818) inset 0 0 12px;
 }
 
 .start-button {
