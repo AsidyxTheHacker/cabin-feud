@@ -37,6 +37,12 @@ createModal();
 document.querySelector('.start-button').addEventListener('click', () => {
     document.querySelector('.modal-container').classList.add('vanish');
 })
+window.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+        e.preventDefault;
+        document.querySelector('.start-button').click();
+    }
+})
 ////////////////////// - END OF SECTION- //////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////// - ANSWER SUBMISSION - //////////////////////
