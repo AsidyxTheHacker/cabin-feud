@@ -14,23 +14,23 @@ body {
 }
 
 .main-logo {
-    width: 20vw;
-    margin: 4vh 0 -0 0;
+    width: 19vw;
+    margin: 2vh 0 -0 0;
 }
 
 .header-container {
     display: flex;
-    align-items: baseline;
     justify-content: space-evenly;
     color: white;
-    min-width: 67vw;
+    min-width: 47vw;
     font-weight: bold;
+    margin: -3vh 0;
 }
 
 .score {
     margin: 0;
     padding: .5vh 1vw;
-    font-size: 3.5vw;
+    font-size: 3vw;
     border: white solid 2px;
     background-color: rgb(0, 38, 114);
     text-shadow: black .15vw .3vh;
@@ -68,6 +68,10 @@ body {
     background-color: rgb(53, 120, 255);
 }
 
+.family-container {
+    display: flex;
+}
+
 .panel {
     display: flex;
     justify-content: space-between;
@@ -87,6 +91,7 @@ body {
 .input-container {
     display: flex;
     align-items: center;
+    margin-top: -2vh;
     gap: 2em;
 }
 
