@@ -12,10 +12,13 @@
     <div class="container">
         <img class="main-logo" src="media/logo.png" alt="Logo">
         <div class="game-container">
-            <div class="question-container">
-                <p class="question">This is an example question?</p>
-            </div>
-            <div class="game-board"></div>
+            <div class="board-container">
+                <div class="score-container"></div>
+                <div class="question-container">
+                    <p class="question"></p>
+                </div>
+                <div class="game-board"></div>
+                </div>
             </div>
             <div class="input-container">
                 <input id="answer-input" autocomplete="off" name="input" type="text" oninput="this.value = this.value.toUpperCase()" placeholder="Answer">
@@ -23,7 +26,7 @@
             </div>
         </div>
     </div>
-    <video src="media/background.mp4" autoplay loop muted></video>
+    <video src="media/background.mp4" autoplay loop muted id="background-video"></video>
     <audio src="media/incorrect.mp3" id="incorrect-sound"></audio>
 </body>
 </html>
