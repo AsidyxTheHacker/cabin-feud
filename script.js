@@ -180,7 +180,7 @@ class Points {
 };
 
 document.querySelector('.start-button').addEventListener('click', () => {
-    el = new Question("Name Something People Are Afraid Of.", "Spiders", "Heights", "Other people", "Dying", "The dark", "Ghosts", "Snakes", "Being alone");
+    el = new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", "Richard", "Joseph");
     el = new Points(36, 21, 12, 11, '08', '07', '04', '01');
 });
 ////////////////////// - END OF SECTION- //////////////////////
