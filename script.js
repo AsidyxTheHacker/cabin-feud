@@ -150,8 +150,8 @@ submitBtn.addEventListener('click', () => {
     answerInput.value = '';
 });
 
-modalInput1.addEventListener('keyup', () => {family1.innerText = modalInput1.value})
-modalInput2.addEventListener('keyup', () => {family2.innerText = modalInput2.value})
+modalInput1.addEventListener('keyup', () => {family1.innerText = modalInput1.value.toUpperCase()})
+modalInput2.addEventListener('keyup', () => {family2.innerText = modalInput2.value.toUpperCase()})
 
 answerInput.addEventListener('keydown', function(e){
     if(e.key === 'Enter'){
@@ -161,7 +161,7 @@ answerInput.addEventListener('keydown', function(e){
 })
 ////////////////////// - END OF SECTION- //////////////////////
 //////////////////////////////////////////////////////////////
-/////////////////// - QUESTION CREATOR - ////////////////////
+/////////////////// - QUESTION TEMPLATE - ///////////////////
 class Question {
     constructor(question, a1, a2, a3, a4, a5, a6, a7, a8) {
         document.querySelector('.question').innerText = question.toUpperCase();
@@ -180,12 +180,37 @@ class Points {
 };
 
 document.querySelector('.start-button').addEventListener('click', () => {
-    el = new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", "Richard", "Joseph");
-    el = new Points(36, 21, 12, 11, '08', '07', '04', '01');
+    switch(randomNum){
+        case 1: question_1(); break;
+        case 2: question_2(); break;
+        case 3: question_3(); break;
+        case 4: question_4(); break;
+        case 5: question_5(); break;
+    }
 });
 ////////////////////// - END OF SECTION- //////////////////////
-// let random = Math.floor(Math.random() * 9) + 1;
-// let test = document.getElementById('test')
+//////////////////////////////////////////////////////////////
+///////////////////// - QUESTION HELL - /////////////////////
+let randomNum = Math.floor(Math.random() * 5) + 1;
 
-// let thing = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
-// test.innerText = thing[`${random}`];
+function question_1(e) {
+    submitBtn.classList.add('ans7')
+    e = new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph")
+    e = new Points(36, 21, 12, 11, '08', '07', '04', '01');
+}
+function question_2(e) {
+    e = new Question("Name a popular candy bar", "hersheys", "snickers", "twix", "kitkat", "reeses", "milky way", "crunch", "3 musketeers")
+    e = new Points(42, 15, 13, 10, '09', '06', '03', '02');
+}
+function question_3(e) {
+    e = new Question("Name a popular superhero from 'Marvel'", "iron man", "captain america", "the hulk", "spiderman", "thor", "black widow", "hawkeye", "black panther")
+    e = new Points(38, 18, 14, 10, '09', '05', '04', '02');
+}
+function question_4(e) {
+    e = new Question("Name a word that rhymes with 'cat'", "hat", "bat", "fat", "rat", "pat", "sat", "mat", "brat")
+    e = new Points(32, 21, 15, 12, 10, '06', '03', '01');
+}
+function question_5(e) {
+    e = new Question("What's something you can find in a kitchen", "refrigerator", "stove", "sink", "microwave", "plates", "utensils", "food", "cups")
+    e = new Points(35, 20, 14, 10, '08', '07', '03', '02');
+}
