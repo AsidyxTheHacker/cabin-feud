@@ -19,13 +19,6 @@ function answerSlot(count){
         panelNum.id = `answer${i + 1}`
         points.id = `points${i + 1}`;
     };
-    for(c = 0; c < 2; c++){
-        let scoreContainer = document.querySelector('.score-container')
-        let scoreSlot = document.createElement('p');
-        scoreContainer.appendChild(scoreSlot).className = 'score';
-        scoreSlot.innerText = 0;
-        scoreSlot.id = `score${c}`;
-    }
 };
 answerSlot(8);
 
