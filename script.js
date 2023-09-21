@@ -24,14 +24,16 @@ answerSlot(8);
 
 function createModal(){
     let modalContainer = document.createElement('div');
-    let modal = document.createElement('div');
-    let modalLogo = document.createElement('img');
-    let modalBtn = document.createElement('button');
     container.appendChild(modalContainer).className = 'modal-container';
-    modalContainer.appendChild(modal).className = 'modal';
-    modal.appendChild(modalLogo).src = 'media/logo.png';
-    modal.appendChild(modalBtn).className = 'start-button';
-    modalBtn.innerText = `Let's Feud!`;
+    modalContainer.innerHTML = `
+    <div class="modal">
+        <img src="media/logo.png"></img>
+        <button class="start-button">Let's Feud!</button>
+            <div class="modal-input-container">
+                <input class="modal-input" id="modalInput1" placeholder="Family One" maxlength="12" autocomplete="Off"></input>
+                <input class="modal-input" id="modalInput2" placeholder="Family Two" maxlength="12" autocomplete="Off"></input>
+            </div>
+    </div>`
 };
 createModal();
 
@@ -53,6 +55,8 @@ document.querySelector('.start-button').addEventListener('click', () => {
     document.querySelectorAll('.panel-num').forEach(el => el.style = 'animation: grow 2s')
     document.querySelectorAll('.panel-num').forEach(el => el.classList.remove('vanish'))
 });
+modalInput1.value = family1.innerText;
+modalInput2.value = family2.innerText;
 ////////////////////// - END OF SECTION- //////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////// - ANSWER SUBMISSION - //////////////////////
@@ -128,14 +132,22 @@ submitBtn.addEventListener('click', () => {
                 strikeImg1.classList.add('vanish')
                 strikeImg2.style.animation = 'grow 1s ease-in-out';
                 strikeImg2.classList.remove('vanish')
-            } else {
+            } else if(strikeNum == 3){
                 strikeImg2.classList.add('vanish')
                 strikeImg3.style.animation = 'grow 1s ease-in-out';
                 strikeImg3.classList.remove('vanish')
+                strikeImg1.style.animation = '';
+            } else {
+                strikeImg3.classList.add('vanish')
+                strikeImg1.classList.remove('vanish')
+                strikeImg1.style.animation = 'grow 1s ease-in-out';
             }
     }
     answerInput.value = '';
 });
+
+modalInput1.addEventListener('keyup', () => {family1.innerText = modalInput1.value})
+modalInput2.addEventListener('keyup', () => {family2.innerText = modalInput2.value})
 
 answerInput.addEventListener('keydown', function(e){
     if(e.key === 'Enter'){
@@ -164,7 +176,7 @@ class Points {
 };
 
 document.querySelector('.start-button').addEventListener('click', () => {
-    el = new Question("Deez nuts?", "balls", "peepee", "nuts", "joe", "weenie", "dumpy", "butts", "poopy");
+    el = new Question("Name Something People Are Afraid Of.", "Spiders", "Heights", "Other people", "Dying", "The dark", "Ghosts", "Snakes", "Being alone");
     el = new Points(36, 21, 12, 11, '08', '07', '04', '01');
 });
 ////////////////////// - END OF SECTION- //////////////////////
