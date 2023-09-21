@@ -141,6 +141,10 @@ submitBtn.addEventListener('click', () => {
                 strikeImg3.classList.add('vanish')
                 strikeImg1.classList.remove('vanish')
                 strikeImg1.style.animation = 'grow 1s ease-in-out';
+                document.querySelectorAll('.panel').forEach(el => el.classList.add('flip'))
+                document.querySelectorAll('.answer').forEach(el => el.classList.remove('vanish'))
+                document.querySelectorAll('.points').forEach(el => el.classList.remove('vanish'))
+                document.querySelectorAll('.panel-num').forEach(el => el.classList.add('vanish'))
             }
     }
     answerInput.value = '';
