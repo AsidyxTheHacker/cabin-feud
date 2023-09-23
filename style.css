@@ -118,11 +118,11 @@ body {
     font-size: 1vw;
     border-radius: 12px;
     min-width: 28%;
-    min-height: 4vh;
+    min-height: 3.5vh;
     cursor: pointer;
     border:rgb(41, 108, 242) solid 3px;
     background-color: rgb(29, 75, 166);
-    padding: .3em .6em;
+    padding: .3em .5em;
     font-weight: bold;
     text-shadow: black 2px 2px 0;
     box-shadow: rgb(49, 112, 236) 0 2px 0, rgba(0, 0, 0, 0.782) inset 0 -3px 0;
@@ -130,18 +130,32 @@ body {
     transition: .15s;
 }
 
-#submit-button:hover {
+#submit-button:hover, #round-btn:hover {
     background-color: rgb(36, 143, 31);
     border:rgb(53, 202, 45) solid 3px;
     box-shadow: rgb(53, 202, 45) 0 2px 0, rgba(0, 0, 0, 0.782) inset 0 -3px 0;
 }
 
-#submit-button:hover:active {
+#submit-button:hover:active, #round-btn:hover:active {
     box-shadow: rgb(53, 202, 45) 0 5px 0, rgba(0, 0, 0, 0.782) inset 0 0 6px
 }
 
-#submit-button:active {
+#submit-button:active, #round-btn:active {
     box-shadow: rgb(49, 112, 236) 0 5px 0, rgba(0, 0, 0, 0.782) inset 0 0 6px;
+}
+
+#round-btn {
+    border-radius: 50%;
+    font-size: 1.2em;
+    padding: 1vh 1vw;
+    text-shadow: black 2px 2px 0;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(29, 75, 166);
+    box-shadow: rgb(49, 112, 236) 0 2px 0, rgba(0, 0, 0, 0.782) inset 0 -3px 0;
+    cursor: pointer;
+    border:rgb(41, 108, 242) solid 3px;
+    transition: .15s;
 }
 
 .answer{
@@ -285,8 +299,9 @@ body {
     .answer{padding-right: 4vw; font-size: .8em;}
     .question-container{min-width: 69vw;}
     .points{font-size: .9em; border-left: solid white 2px}
+    .input-container{gap: 1em;}
     #answer-input{font-size: 1em; width: 40vw;}
-    #submit-button, .panel-num, .question{font-size: 1em;}
+    #submit-button, .panel-num, .question, #round-btn{font-size: 1em;}
     .main-logo{width: 10em;}
     .modal{height: 15em; width: 15em;}
     .modal img{width: 10em; transform: translateY(-5vh);}
