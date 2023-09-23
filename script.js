@@ -54,6 +54,11 @@ document.querySelector('.start-button').addEventListener('click', () => {
     document.querySelector('.modal-container').classList.add('vanish');
     document.querySelectorAll('.panel-num').forEach(el => el.style = 'animation: grow 2s')
     document.querySelectorAll('.panel-num').forEach(el => el.classList.remove('vanish'))
+    switch(randomNum){
+        case 1: question_1(); break;
+        case 2: question_2(); break;
+        case 3: question_3(); break;
+    }
 });
 modalInput1.value = family1.innerText;
 modalInput2.value = family2.innerText;
@@ -178,23 +183,12 @@ class Points {
         points7.innerText = p7; points8.innerText = p8;
     };
 };
-
-document.querySelector('.start-button').addEventListener('click', () => {
-    switch(randomNum){
-        case 1: question_1(); break;
-        case 2: question_2(); break;
-        case 3: question_3(); break;
-        case 4: question_4(); break;
-        case 5: question_5(); break;
-    }
-});
 ////////////////////// - END OF SECTION- //////////////////////
 //////////////////////////////////////////////////////////////
 ///////////////////// - QUESTION HELL - /////////////////////
-let randomNum = Math.floor(Math.random() * 5) + 1;
+let randomNum = Math.floor(Math.random() * 3) + 1;
 
 function question_1(e) {
-    submitBtn.classList.add('ans7')
     e = new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph")
     e = new Points(36, 21, 12, 11, '08', '07', '04', '01');
 }
@@ -211,6 +205,35 @@ function question_4(e) {
     e = new Points(32, 21, 15, 12, 10, '06', '03', '01');
 }
 function question_5(e) {
-    e = new Question("What's something you can find in a kitchen", "refrigerator", "stove", "sink", "microwave", "plates", "utensils", "food", "cups")
+    e = new Question("What's something you can find in a kitchen?", "refrigerator", "stove", "sink", "microwave", "plates", "utensils", "food", "cups")
     e = new Points(35, 20, 14, 10, '08', '07', '03', '02');
 }
+function question_6(e) {
+    e = new Question("Name a popular snack to eat at the theater", "popcorn", "candy", "chips", "nachos", "pretzel", "hot dog", "soda", "churro")
+    e = new Points(40, 17, 12, 10, '07', '06', '04', '03');
+}
+
+document.getElementById('round-btn').addEventListener('click', () => {
+    if(document.getElementById('round-btn').classList.contains('round-btn2')){
+        randomNum = Math.floor(Math.random() * 3) + 1;
+        switch(randomNum){
+            case 1: question_1(); break;
+            case 2: question_2(); break;
+            case 3: question_3(); break;
+            };
+    }
+    document.querySelectorAll('.panel').forEach(el => {el.classList.remove('flip')})
+    document.querySelectorAll('.answer').forEach(el => {el.classList.add('vanish')})
+    document.querySelectorAll('.points').forEach(el => {el.classList.add('vanish')})
+    document.querySelectorAll('.panel-num').forEach(el => {el.classList.remove('vanish')})
+    document.getElementById('round-btn').classList.add('round-btn2')
+    switch(randomNum){
+        case 1: question_4(); break;
+        case 2: question_5(); break;
+        case 3: question_6(); break;
+        };
+})
+
+// submitBtn.addEventListener('click', () => {
+//     console.log(["LOG","DEL","C","CE"].includes(answerInput.value));
+// })
