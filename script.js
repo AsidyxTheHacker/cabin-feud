@@ -55,9 +55,15 @@ document.querySelector('.start-button').addEventListener('click', () => {
     document.querySelectorAll('.panel-num').forEach(el => el.style = 'animation: grow 2s')
     document.querySelectorAll('.panel-num').forEach(el => el.classList.remove('vanish'))
     switch(randomNum){
-        case 1: question_1(); break;
-        case 2: question_2(); break;
-        case 3: question_3(); break;
+        case 1: new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph");
+        new Points(36, 21, 12, 11, '08', '07', '04', '01');
+        break;
+        case 2: new Question("Name a popular candy bar", "hersheys", "snickers", "twix", "kitkat", "reeses", "milky way", "crunch", "3 musketeers");
+        new Points(42, 15, 13, 10, '09', '06', '03', '02');
+        break;
+        case 3: new Question("Name a popular superhero from 'Marvel'", "iron man", "captain america", "the hulk", "spiderman", "thor", "black widow", "hawkeye", "black panther");
+        new Points(38, 18, 14, 10, '09', '05', '04', '02');
+        break;
     }
 });
 modalInput1.value = family1.innerText;
@@ -151,13 +157,11 @@ submitBtn.addEventListener('click', () => {
                 document.querySelectorAll('.points').forEach(el => el.classList.remove('vanish'))
                 document.querySelectorAll('.panel-num').forEach(el => el.classList.add('vanish'))
             }
-    }
-    answerInput.value = '';
+    };
 });
 
 modalInput1.addEventListener('keyup', () => {family1.innerText = modalInput1.value.toUpperCase()})
 modalInput2.addEventListener('keyup', () => {family2.innerText = modalInput2.value.toUpperCase()})
-
 answerInput.addEventListener('keydown', function(e){
     if(e.key === 'Enter'){
         e.preventDefault;
@@ -165,75 +169,3 @@ answerInput.addEventListener('keydown', function(e){
     }
 })
 ////////////////////// - END OF SECTION- //////////////////////
-//////////////////////////////////////////////////////////////
-/////////////////// - QUESTION TEMPLATE - ///////////////////
-class Question {
-    constructor(question, a1, a2, a3, a4, a5, a6, a7, a8) {
-        document.querySelector('.question').innerText = question.toUpperCase();
-        panel1.innerText = a1.toUpperCase(); panel2.innerText = a2.toUpperCase();
-        panel3.innerText = a3.toUpperCase(); panel4.innerText = a4.toUpperCase();
-        panel5.innerText = a5.toUpperCase(); panel6.innerText = a6.toUpperCase();
-        panel7.innerText = a7.toUpperCase(); panel8.innerText = a8.toUpperCase();
-    };
-};
-class Points {
-    constructor(p1, p2, p3, p4, p5, p6, p7, p8) {
-        points1.innerText = p1; points2.innerText = p2; points3.innerText = p3;
-        points4.innerText = p4; points5.innerText = p5; points6.innerText = p6;
-        points7.innerText = p7; points8.innerText = p8;
-    };
-};
-////////////////////// - END OF SECTION- //////////////////////
-//////////////////////////////////////////////////////////////
-///////////////////// - QUESTION HELL - /////////////////////
-let randomNum = Math.floor(Math.random() * 3) + 1;
-
-function question_1(e) {
-    e = new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph")
-    e = new Points(36, 21, 12, 11, '08', '07', '04', '01');
-}
-function question_2(e) {
-    e = new Question("Name a popular candy bar", "hersheys", "snickers", "twix", "kitkat", "reeses", "milky way", "crunch", "3 musketeers")
-    e = new Points(42, 15, 13, 10, '09', '06', '03', '02');
-}
-function question_3(e) {
-    e = new Question("Name a popular superhero from 'Marvel'", "iron man", "captain america", "the hulk", "spiderman", "thor", "black widow", "hawkeye", "black panther")
-    e = new Points(38, 18, 14, 10, '09', '05', '04', '02');
-}
-function question_4(e) {
-    e = new Question("Name a word that rhymes with 'cat'", "hat", "bat", "fat", "rat", "pat", "sat", "mat", "brat")
-    e = new Points(32, 21, 15, 12, 10, '06', '03', '01');
-}
-function question_5(e) {
-    e = new Question("What's something you can find in a kitchen?", "refrigerator", "stove", "sink", "microwave", "plates", "utensils", "food", "cups")
-    e = new Points(35, 20, 14, 10, '08', '07', '03', '02');
-}
-function question_6(e) {
-    e = new Question("Name a popular snack to eat at the theater", "popcorn", "candy", "chips", "nachos", "pretzel", "hot dog", "soda", "churro")
-    e = new Points(40, 17, 12, 10, '07', '06', '04', '03');
-}
-
-document.getElementById('round-btn').addEventListener('click', () => {
-    if(document.getElementById('round-btn').classList.contains('round-btn2')){
-        randomNum = Math.floor(Math.random() * 3) + 1;
-        switch(randomNum){
-            case 1: question_1(); break;
-            case 2: question_2(); break;
-            case 3: question_3(); break;
-            };
-    }
-    document.querySelectorAll('.panel').forEach(el => {el.classList.remove('flip')})
-    document.querySelectorAll('.answer').forEach(el => {el.classList.add('vanish')})
-    document.querySelectorAll('.points').forEach(el => {el.classList.add('vanish')})
-    document.querySelectorAll('.panel-num').forEach(el => {el.classList.remove('vanish')})
-    document.getElementById('round-btn').classList.add('round-btn2')
-    switch(randomNum){
-        case 1: question_4(); break;
-        case 2: question_5(); break;
-        case 3: question_6(); break;
-        };
-})
-
-// submitBtn.addEventListener('click', () => {
-//     console.log(["LOG","DEL","C","CE"].includes(answerInput.value));
-// })
