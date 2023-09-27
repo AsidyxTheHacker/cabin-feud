@@ -27,13 +27,14 @@ body {
     margin: -3vh 0;
 }
 
-.score {
+.score, h1 {
     margin: 0;
     padding: .5vh 1vw;
     font-size: 3vw;
     border: white solid 2px;
     background-color: rgb(0, 38, 114);
     text-shadow: black .15vw .3vh;
+    text-align: center;
 }
 
 .question-container {
@@ -114,7 +115,7 @@ body {
     color: rgba(29, 75, 166, 0.431);
 }
 
-#submit-button {
+#submit-button, .scoreBtn {
     font-size: 1vw;
     border-radius: 12px;
     min-width: 28%;
@@ -130,17 +131,17 @@ body {
     transition: .15s;
 }
 
-#submit-button:hover, #round-btn:hover {
+#submit-button:hover, #round-btn:hover, .scoreBtn:hover {
     background-color: rgb(36, 143, 31);
     border:rgb(53, 202, 45) solid 3px;
     box-shadow: rgb(53, 202, 45) 0 2px 0, rgba(0, 0, 0, 0.782) inset 0 -3px 0;
 }
 
-#submit-button:hover:active, #round-btn:hover:active {
+#submit-button:hover:active, #round-btn:hover:active, .scoreBtn:hover:active {
     box-shadow: rgb(53, 202, 45) 0 5px 0, rgba(0, 0, 0, 0.782) inset 0 0 6px
 }
 
-#submit-button:active, #round-btn:active {
+#submit-button:active, #round-btn:active, .scoreBtn:active {
     box-shadow: rgb(49, 112, 236) 0 5px 0, rgba(0, 0, 0, 0.782) inset 0 0 6px;
 }
 
@@ -158,7 +159,7 @@ body {
     transition: .15s;
 }
 
-.answer{
+.answer {
     color: white;
     font-weight: bold;
     font-size: 2.5em;
@@ -255,7 +256,7 @@ body {
     margin-top: 1vw;
 }
 
-.modal-input {
+.modal-input, #scoreInput {
     font-size: 1vw;
     border-radius: 20px;
     max-width: 10vw;
@@ -265,6 +266,7 @@ body {
     outline: none;
     background-color: rgb(227, 208, 161);
     text-align: center;
+    text-transform: uppercase;
     box-shadow: rgb(188, 142, 26) inset 0 -.25vh 0;
 }
 
@@ -305,7 +307,7 @@ body {
     .main-logo{width: 10em;}
     .modal{height: 15em; width: 15em;}
     .modal img{width: 10em; transform: translateY(-5vh);}
-    .start-button{font-size: 2em;}
-    .modal-input{font-size: 2.5vw; max-width: 25vw;}
+    .start-button, h1{font-size: 2em;}
+    .modal-input, #scoreInput, .scoreBtn{font-size: 2.5vw; max-width: 25vw;}
     .family{font-size: 2.25vw;}
 }
