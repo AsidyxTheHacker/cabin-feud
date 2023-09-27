@@ -26,7 +26,7 @@ function createModal(){
     let modalContainer = document.createElement('div');
     container.appendChild(modalContainer).className = 'modal-container';
     modalContainer.innerHTML = `
-    <div class="modal">
+    <div class="modal" id="startModal">
         <img src="media/logo.png"></img>
         <button class="start-button">Let's Feud!</button>
             <div class="modal-input-container">
@@ -36,6 +36,20 @@ function createModal(){
     </div>`
 };
 createModal();
+
+function scoreModal() {
+    let scoreModal = document.createElement('div');
+    document.querySelector('.modal-container').appendChild(scoreModal).className = 'modal vanish'
+    scoreModal.id = 'scoreModal'
+    scoreModal.innerHTML = `
+    <h1 style="color: white; margin-bottom: .3em;">Enter Score</h1>
+    <input type="number" id="scoreInput" placeholder="Score" onKeyPress="if(this.value.length==3) return false;">
+    <div class="modal-input-container">
+        <button class="scoreBtn" id="scoreSubmit1">Team 1</button>
+        <button class="scoreBtn" id="scoreSubmit2">Team 2</button>
+    </div>`
+}
+scoreModal();
 
 function createStrike(){
     let strikeContainer = document.createElement('div');
@@ -54,6 +68,7 @@ document.querySelector('.start-button').addEventListener('click', () => {
     document.querySelector('.modal-container').classList.add('vanish');
     document.querySelectorAll('.panel-num').forEach(el => el.style = 'animation: grow 2s')
     document.querySelectorAll('.panel-num').forEach(el => el.classList.remove('vanish'))
+    document.getElementById('startModal').classList.add('vanish');
     switch(randomNum){
         case 1: new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph");
         new Points(36, 21, 12, 11, '08', '07', '04', '01');
@@ -159,6 +174,14 @@ submitBtn.addEventListener('click', () => {
             }
     };
 });
+scoreSubmit1.addEventListener('click', () => {document.getElementById('score1').innerHTML = document.getElementById('scoreInput').value;})
+scoreSubmit2.addEventListener('click', () => {document.getElementById('score2').innerHTML = document.getElementById('scoreInput').value;})
+document.querySelectorAll('.scoreBtn').forEach(el => el.addEventListener('click', () => {
+    document.querySelector('.modal-container').classList.add('vanish');
+    if(scoreInput.value == ''){score1.innerHTML = 0; score2.innerHTML = 0;}
+    scoreInput.value = '';
+    document.querySelectorAll('.score').forEach(el => {if(el.innerHTML >= 300){el.innerHTML = 300;}})
+}))
 
 modalInput1.addEventListener('keyup', () => {family1.innerText = modalInput1.value.toUpperCase()})
 modalInput2.addEventListener('keyup', () => {family2.innerText = modalInput2.value.toUpperCase()})
@@ -167,5 +190,5 @@ answerInput.addEventListener('keydown', function(e){
         e.preventDefault;
         submitBtn.click();
     }
-})
+});
 ////////////////////// - END OF SECTION- //////////////////////
