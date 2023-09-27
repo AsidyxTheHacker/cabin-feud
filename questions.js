@@ -30,11 +30,15 @@ document.getElementById('round-btn').addEventListener('click', () => {
                 new Points(35, 20, 14, 10, '08', '07', '03', '02'); break;
         case 6: new Question("Name a popular snack to eat at the theater", "popcorn", "candy", "chips", "nachos", "pretzel", "hot dog", "soda", "churro");
                 new Points(40, 17, 12, 10, '07', '06', '04', '03'); break;
-        case 7: console.log('this is ans7'); break;
-        case 8: console.log('this is ans8'); break;
-        case 9: console.log('this is ans9'); break;
-        default: console.log('nothin'); break;
+        case 7: new Question("Name a popular video game console", "playstation", "ds", "switch", "gameboy", "wii", "xbox", "psp", "nes");
+                new Points(34, 24, 12, '09', '08', '06', '05', '01'); break;
+        case 8: new Question("Name the most populated countries in Europe", "Russia", "Germany", "united kingdom", "france", "italy", "spain", "ukraine", "poland");
+                new Points(37, 23, 13, '09', '07', '05', '04', '02'); break;
+        case 9: new Question("What are some animals you'd see on a farm", "cow", "chicken", "sheep", "horse", "pig", "goat", "dog", "donkey");
+                new Points(34, 24, 12, '09', '08', '06', '05', '01'); break;
         };
+    document.querySelector('.modal-container').classList.remove('vanish');
+    document.getElementById('scoreModal').classList.remove('vanish');
 });
 
 submitBtn.addEventListener('click', () => {
@@ -44,6 +48,8 @@ submitBtn.addEventListener('click', () => {
         case 3: if(answersThreeList.includes(answerInput.value)){closeAnswer(); break;};
         case 5: if(answersFiveList.includes(answerInput.value)){closeAnswer(); break;}
         case 6: if(answersSixList.includes(answerInput.value)){closeAnswer(); break;}
+        case 7: if(answersSevenList.includes(answerInput.value)){closeAnswer(); break;}
+        case 9: if(answersNineList.includes(answerInput.value)){closeAnswer(); break;}
     }
     answerInput.value = '';
 })
@@ -54,8 +60,11 @@ function closeAnswer() {
     document.querySelectorAll('.strike-img').forEach(el => el.classList.add('vanish'))
     strikeNum = strikeNum - 1;
 }
-let answersOneList = ["DICK", "RICH", "BOB", "ROB", "DAVE", "JOHNNY", "JONNY", "JONATHAN", "MIKE", "MIKEY", "WILLIAM", "JOE", "JOEY", "ROBBIE"];
+let answersOneList = ["DICK", "RICH", "RICHIE","BOB", "ROB", "DAVE", "JOHNNY", "JONNY", "JONATHAN", "MIKE", "MIKEY", "WILLIAM", "JOE", "JOEY", "ROBBIE"];
 let answersTwoList = ["HERSHEY", "HERSHEY BAR", "SNICKER", "SNICKER BAR", "KIT KAT", "KIT-KAT", "REESE'S", "MILKYWAY", "CRUNCH BAR", "MUSKETEERS", "THREE MUSKETEERS", "3 MUSKETEER"];
-let answersThreeList = ["IRONMAN", "IRON-MAN", "CAPTAINAMERICA", "HULK", "SPIDER MAN", "SPIDER-MAN", "BLACKWIDOW", "HAWK EYE", "BLACKPANTHER"];
+let answersThreeList = ["IRONMAN", "IRON-MAN", "CAPTAINAMERICA", "HULK", "INCREDIBLE HULK", "SPIDER MAN", "SPIDER-MAN", "BLACKWIDOW", "HAWK EYE", "BLACKPANTHER"];
 let answersFiveList = ["FRIDGE", "FREEZER", "OVEN", "WATER", "DRAIN", "CHINA", "FORKS", "FORK", "SPOONS", "SPOON", "KNIFE", "KNIVES", "DINNER", "CUP", "UTENSIL", "PLATE"];
-let answersSixList = ["CHOCOLATE", "CANDY BAR", "CHIP", "POTATO CHIPS", "NACHO", "PRETZELS", "PRETZEL NUGGETS", "HOTDOG", "DRINK", "SLURPEE", "SLUSHY", "SHAKE", "CHURROS"];
+let answersSixList = ["CHOCOLATE", "CANDY BAR", "CHIP", "POTATO CHIPS", "NACHO", "PRETZELS", "PRETZEL NUGGETS", "HOTDOG", "DRINK", "SHAKE", "CHURROS"];
+let answersSevenList = ["PLAY STATION", "PLAYSTATION 2", "PLAYSTATION 3", "PLAYSTATION 4", "PLAYSTATION 5", "XBOX ONE", "XBOX 360", "NINTENDO DS", "NINTENDO SWTICH", "GBA",
+"GAMEBOY ADVANCE", "GAMEBOY COLOR", "NINTENDO WII", "PLAYSTATION PORTABLE", "GB"];
+let answersNineList = ["BULL", "ROOSTER", "HEN", "SHEEP DOG", "LAMB", "PONY", "CHICK", "MARE", "HOG", "PUPPY"];
