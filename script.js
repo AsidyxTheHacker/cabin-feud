@@ -69,6 +69,7 @@ document.querySelector('.start-button').addEventListener('click', () => {
     document.querySelectorAll('.panel-num').forEach(el => el.style = 'animation: grow 2s')
     document.querySelectorAll('.panel-num').forEach(el => el.classList.remove('vanish'))
     document.getElementById('startModal').classList.add('vanish');
+    new Audio('media/music.mp3').play();
     switch(randomNum){
         case 1: new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph");
         new Points(36, 21, 12, 11, '08', '07', '04', '01');
@@ -173,11 +174,20 @@ submitBtn.addEventListener('click', () => {
                 document.querySelectorAll('.panel-num').forEach(el => el.classList.add('vanish'))
             }
     };
+    if(strikeNum == 4){
+        document.getElementById('round-btn').classList.remove('vanish');
+        document.getElementById('submit-button').classList.add('vanish');
+        document.getElementById('answer-input').classList.add('vanish');
+    }
 });
 scoreSubmit1.addEventListener('click', () => {document.getElementById('score1').innerHTML = document.getElementById('scoreInput').value;})
 scoreSubmit2.addEventListener('click', () => {document.getElementById('score2').innerHTML = document.getElementById('scoreInput').value;})
 document.querySelectorAll('.scoreBtn').forEach(el => el.addEventListener('click', () => {
+    new Audio('media/music.mp3').play();
+    document.getElementById('submit-button').classList.remove('vanish');
+    document.getElementById('answer-input').classList.remove('vanish');
     document.querySelector('.modal-container').classList.add('vanish');
+    document.getElementById('round-btn').classList.add('vanish');
     if(scoreInput.value == ''){score1.innerHTML = 0; score2.innerHTML = 0;}
     scoreInput.value = '';
     document.querySelectorAll('.score').forEach(el => {if(el.innerHTML >= 300){el.innerHTML = 300;}})
