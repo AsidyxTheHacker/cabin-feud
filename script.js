@@ -69,7 +69,7 @@ document.querySelector('.start-button').addEventListener('click', () => {
     document.querySelectorAll('.panel-num').forEach(el => el.style = 'animation: grow 2s')
     document.querySelectorAll('.panel-num').forEach(el => el.classList.remove('vanish'))
     document.getElementById('startModal').classList.add('vanish');
-    new Audio('media/music.mp3').play();
+    music.play();
     switch(randomNum){
         case 1: new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph");
         new Points(36, 21, 12, 11, '08', '07', '04', '01');
@@ -180,10 +180,10 @@ submitBtn.addEventListener('click', () => {
         document.getElementById('answer-input').classList.add('vanish');
     }
 });
-scoreSubmit1.addEventListener('click', () => {document.getElementById('score1').innerHTML = document.getElementById('scoreInput').value;})
-scoreSubmit2.addEventListener('click', () => {document.getElementById('score2').innerHTML = document.getElementById('scoreInput').value;})
+scoreSubmit1.addEventListener('click', () => {Number(score1.innerHTML); score1.innerHTML = Number(scoreInput.value) + Number(score1.innerHTML);});
+scoreSubmit2.addEventListener('click', () => {Number(score2.innerHTML); score2.innerHTML = Number(scoreInput.value) + Number(score2.innerHTML);});
 document.querySelectorAll('.scoreBtn').forEach(el => el.addEventListener('click', () => {
-    new Audio('media/music.mp3').play();
+    music.play();
     document.getElementById('submit-button').classList.remove('vanish');
     document.getElementById('answer-input').classList.remove('vanish');
     document.querySelector('.modal-container').classList.add('vanish');
