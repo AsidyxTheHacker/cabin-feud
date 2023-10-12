@@ -16,6 +16,8 @@ class Points {
 };
 let randomNum = Math.floor(Math.random() * 3) + 1;
 document.getElementById('round-btn').addEventListener('click', () => {
+    music.pause();
+    music.currentTime = 0;
     document.querySelectorAll('.panel').forEach(el => {el.classList.remove('flip')})
     document.querySelectorAll('.answer').forEach(el => {el.classList.add('vanish')})
     document.querySelectorAll('.points').forEach(el => {el.classList.add('vanish')})
@@ -60,7 +62,7 @@ function closeAnswer() {
     document.querySelectorAll('.strike-img').forEach(el => el.classList.add('vanish'))
     strikeNum = strikeNum - 1;
 }
-let answersOneList = ["DICK", "RICH", "RICHIE","BOB", "ROB", "DAVE", "JOHNNY", "JONNY", "JONATHAN", "MIKE", "MIKEY", "WILLIAM", "JOE", "JOEY", "ROBBIE"];
+let answersOneList = ["DICK", "RICH", "RICHIE", "BOB", "ROB", "DAVE", "JOHNNY", "JONNY", "JONATHAN", "MIKE", "MIKEY", "WILLIAM", "JOE", "JOEY", "ROBBIE"];
 let answersTwoList = ["HERSHEY", "HERSHEY BAR", "SNICKER", "SNICKER BAR", "KIT KAT", "KIT-KAT", "REESE'S", "MILKYWAY", "CRUNCH BAR", "MUSKETEERS", "THREE MUSKETEERS", "3 MUSKETEER"];
 let answersThreeList = ["IRONMAN", "IRON-MAN", "CAPTAINAMERICA", "HULK", "INCREDIBLE HULK", "SPIDER MAN", "SPIDER-MAN", "BLACKWIDOW", "HAWK EYE", "BLACKPANTHER"];
 let answersFiveList = ["FRIDGE", "FREEZER", "OVEN", "WATER", "DRAIN", "CHINA", "FORKS", "FORK", "SPOONS", "SPOON", "KNIFE", "KNIVES", "DINNER", "CUP", "UTENSIL", "PLATE"];
