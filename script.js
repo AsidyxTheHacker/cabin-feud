@@ -71,13 +71,13 @@ document.querySelector('.start-button').addEventListener('click', () => {
     document.getElementById('startModal').classList.add('vanish');
     music.play();
     switch(randomNum){
-        case 1: new Question("What is a common name for a boy?", "James", "Robert", "John", "Michael", "David", "Will", 'Richard', "Joseph");
-        new Points(36, 21, 12, 11, '08', '07', '04', '01');
+        case 1: new Question("Name an animal with sharp teeth", "Shark", "tiger", "lion", "dog", "bear", "wolf", 'cat', "bat");
+        new Points(36, 20, 17, 11, '07', '04', '03', '01');
         break;
-        case 2: new Question("Name a popular candy bar", "hersheys", "snickers", "twix", "kitkat", "reeses", "milky way", "crunch", "3 musketeers");
+        case 2: new Question("Name food you'd see at the holiday dinner table", "turkey", "mashed potatoes", "ham", "stuffing", "mac and cheese", "green beans", "pie", "gravy");
         new Points(42, 15, 13, 10, '09', '06', '03', '02');
         break;
-        case 3: new Question("Name a popular superhero from 'Marvel'", "iron man", "captain america", "the hulk", "spiderman", "thor", "black widow", "hawkeye", "black panther");
+        case 3: new Question("Name something that comes in sets of 12", "eggs", "donuts", "roses", "beer", "soda", "socks", "dishes", "months");
         new Points(38, 18, 14, 10, '09', '05', '04', '02');
         break;
     }
@@ -190,7 +190,7 @@ document.querySelectorAll('.scoreBtn').forEach(el => el.addEventListener('click'
     document.getElementById('round-btn').classList.add('vanish');
     if(scoreInput.value == ''){score1.innerHTML = 0; score2.innerHTML = 0;}
     scoreInput.value = '';
-    document.querySelectorAll('.score').forEach(el => {if(el.innerHTML >= 300){el.innerHTML = 300;}})
+    document.querySelectorAll('.score').forEach(el => {if(el.innerHTML >= 500){el.innerHTML = 500;}})
 }))
 
 modalInput1.addEventListener('keyup', () => {family1.innerText = modalInput1.value.toUpperCase()})

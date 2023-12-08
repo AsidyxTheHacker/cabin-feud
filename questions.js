@@ -26,17 +26,17 @@ document.getElementById('round-btn').addEventListener('click', () => {
     document.querySelectorAll('.strike-img').forEach(el => el.classList.add('vanish'))
     randomNum = randomNum + 3;
     switch(randomNum){
-        case 4: new Question("Name a word that rhymes with 'cat'", "hat", "bat", "fat", "rat", "pat", "sat", "mat", "brat");
+        case 4: new Question("A game you see being played at the park", "baseball", "basketball", "football", "frisbee", "tag", "chess", "soccer", "hide and seek");
                 new Points(32, 21, 15, 12, 10, '06', '03', '01'); break;
-        case 5: new Question("What's something you can find in a kitchen?", "refrigerator", "stove", "sink", "microwave", "plates", "utensils", "food", "cups");
-                new Points(35, 20, 14, 10, '08', '07', '03', '02'); break;
-        case 6: new Question("Name a popular snack to eat at the theater", "popcorn", "candy", "chips", "nachos", "pretzel", "hot dog", "soda", "churro");
+        case 5: new Question("A man's name that's three letters long", "Bob", "Joe", "Ben", "Jim", "Dan", "Tim", "Sam", "Ted");
+                new Points(35, 21, 13, 10, '08', '07', '03', '02'); break;
+        case 6: new Question("Name something that gets saved", "money", "people", "food", "data", "pictures", "soul", "video games", "pets");
                 new Points(40, 17, 12, 10, '07', '06', '04', '03'); break;
-        case 7: new Question("Name a popular video game console", "playstation", "ds", "switch", "gameboy", "wii", "xbox", "psp", "nes");
+        case 7: new Question("Name a type of alcohol you'd expect to see at a bar", "beer", "vodka", "rum", "tequila", "gin", "whiskey", "wine", "bourbon");
                 new Points(34, 24, 12, '09', '08', '06', '05', '01'); break;
-        case 8: new Question("Name the most populated countries in Europe", "Russia", "Germany", "united kingdom", "france", "italy", "spain", "ukraine", "poland");
+        case 8: new Question("A fictional killer you wouldn't want to see in a dark alley", "Jason", "Michael Myers", "Ghostface", "Pennywise", "Jigsaw", "Leatherface", "Freddy Krueger", "Chucky");
                 new Points(37, 23, 13, '09', '07', '05', '04', '02'); break;
-        case 9: new Question("What are some animals you'd see on a farm", "cow", "chicken", "sheep", "horse", "pig", "goat", "dog", "donkey");
+        case 9: new Question("Name an expression that often ends with 'up'", "whats up", "shut up", "heads up", "screw up", "make up", "straight up", "beat up", "7 up");
                 new Points(34, 24, 12, '09', '08', '06', '05', '01'); break;
         };
     document.querySelector('.modal-container').classList.remove('vanish');
